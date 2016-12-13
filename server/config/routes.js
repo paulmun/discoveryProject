@@ -8,12 +8,7 @@
 			console.log(req.body);
 			searchController.all(req,res);
 		});
-
-		// app.post('/search', function(req, res){
-		// 	console.log(req.body);
-		// 	searchController.create(req, res);
-		// })
-
+		
 	}
 
 })();

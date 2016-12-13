@@ -4,6 +4,7 @@
 		Search = mongoose.model('Search');
 
 	function searchController(){
+		
 		this.all = function(req, res){
 			//replace spaces with '+' for query
 			var query = req.body.search.replace(' ','+');
@@ -36,18 +37,7 @@
 
 			});
 		}
-		// this.create = function(req, res){
-		// 	var key = new Search({value: req.body.search});
 
-		// 	console.log(key);
-
-		// 	key.save(function(err, key){
-		// 		if(err)res.json(err);
-		// 		else{
-		// 			console.log(key);
-		// 		}
-		// 	});
-		// }
 	}
 
 	module.exports = new searchController();
