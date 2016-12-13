@@ -2,9 +2,8 @@
 	<input type="text" id="searchInput" ng-model="searchText" placeholder="Enter Search Terms">
 	<input type="submit" id="searchSubmit" ng-click="search()" value="Search">
 </form>
-<div id="results">
-	<p>{{errors}}</p>
-	<p><b>Showing Results For:</b>{{resultText}}</p>
+<div id="results" ng-hide="firstSearch">
+	<p id="resultText"><b>Showing Results For: </b>"{{resultText}}"</p>
 	<div id="results">
 		<div class="result" id="resultLabel">
 			<p>Go to Channel</p>

@@ -7,6 +7,7 @@
 		$scope.results = [];
 		$scope.errors = '';
 		$scope.resultText = '';
+		$scope.firstSearch = true;
 
 		$scope.search = function(){
 			searchFactory.search({search: $scope.searchText}, function(data){
@@ -17,10 +18,14 @@
 					$scope.results = data;
 					$scope.resultText = $scope.searchText;
 					$scope.searchText = '';
+
+					if($scope.firstSearch){
+						$scope.firstSearch = !$scope.firstSearch;
+					}
 				}
-				
+
 			});
 		}
-	};
+	}
 
 })();

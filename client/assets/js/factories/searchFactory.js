@@ -19,6 +19,6 @@
 			}
 		}
 		return new SearchFactory();
-	};
+	}
 		
 })();

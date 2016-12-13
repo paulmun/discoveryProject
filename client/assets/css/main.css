@@ -1,3 +1,93 @@
+.title {
+  text-align: center;
+  font-size: 25px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 37px; }
+
+.searchForm {
+  text-align: center;
+  width: 52vw;
+  margin: 0 auto;
+  background-color: #FFFFFF;
+  height: 4.5vh;
+  border: 4px solid #CCCCCC;
+  padding: 2vw; }
+  .searchForm #searchInput {
+    height: 77%;
+    width: 65%;
+    border: none;
+    border-bottom: 2px solid #E52D27; }
+  .searchForm #searchSubmit {
+    border: none;
+    font-size: 15px;
+    text-transform: uppercase;
+    font-family: Gotham;
+    font-weight: 400;
+    letter-spacing: 4px;
+    color: white;
+    background-color: #E52D27;
+    margin-left: 24px;
+    padding: 12px; }
+
+#results {
+  width: 80vw;
+  margin: 0 auto; }
+  #results #resultText {
+    width: 56.8vw;
+    margin: 0 auto 30px;
+    text-align: center;
+    background-color: #CCCCCC;
+    padding: 1vh 0;
+    color: #FFFFFF; }
+    #results #resultText b {
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase; }
+  #results #resultLabel p {
+    width: 30%;
+    display: inline-block;
+    margin-left: 19.5%;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 1px; }
+  #results #resultLabel p:nth-child(2) {
+    margin-left: 10%; }
+  #results .result {
+    border-bottom: 1px solid #EEEEEE;
+    margin-top: 10px;
+    padding-bottom: 5px; }
+    #results .result img {
+      width: 8%;
+      margin-left: 3%; }
+    #results .result a {
+      width: 40%;
+      display: inline-block;
+      vertical-align: top;
+      margin-top: 3%;
+      margin-left: 8%;
+      font-size: 14px;
+      color: #E52D27;
+      text-decoration: none;
+      font-weight: 200;
+      cursor: pointer; }
+    #results .result p {
+      display: inline-block;
+      width: 32%;
+      vertical-align: top;
+      font-size: 14px;
+      font-weight: 200;
+      margin-top: 3%; }
+  #results .result:last-of-type {
+    border: none; }
+
+body {
+  font-family: Gotham; }
+
+.ng-hide {
+  display: none !important; }
+
 @font-face {
   font-family: 'Utopia';
   font-style: normal;
