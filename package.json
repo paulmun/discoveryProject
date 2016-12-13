@@ -17,6 +17,7 @@
     "browser-sync": "^2.17.0",
     "browsersync": "0.0.1-security",
     "express": "^4.8.2",
+    "googleapis": "^15.0.0",
     "mongoose": "^4.6.3"
   },
   "devDependencies": {

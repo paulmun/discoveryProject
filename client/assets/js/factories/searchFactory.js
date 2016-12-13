@@ -7,13 +7,14 @@
 			this.search = function(query, callback){
 				console.log(query);
 				$http.post('/search', query).then(function(returnData){
-					console.log(returnData);
+
 					if(returnData.data.errors){
 						console.log(returnData.data.errors);
 						callback(returData.data);
 					} else{
-						callback(returnData.data);
+						callback(returnData.data.items);
 					}
+
 				});
 			}
 		}

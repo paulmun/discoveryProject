@@ -1,0 +1,27 @@
+@font-face {
+  font-family: 'Utopia';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/UtopiaStd-Disp.otf") format("opentype"); }
+@font-face {
+  font-family: 'Gotham';
+  font-style: normal;
+  font-weight: normal;
+  src: url("../fonts/Gotham-Book.otf") format("opentype"); }
+@font-face {
+  font-family: 'Gotham';
+  font-style: 'light';
+  font-weight: 200;
+  src: url("../fonts/Gotham-Light.otf") format("opentype"); }
+@font-face {
+  font-family: 'Gotham';
+  font-style: 'bold';
+  font-weight: 600;
+  src: url("../fonts/Gotham-Bold.otf") format("opentype"); }
+@font-face {
+  font-family: 'Gotham';
+  font-style: 'black';
+  font-weight: 800;
+  src: url("../fonts/Gotham-Black.otf") format("opentype"); }
+
+/*# sourceMappingURL=main.css.map */
