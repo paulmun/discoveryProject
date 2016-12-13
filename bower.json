@@ -1,0 +1,21 @@
+{
+  "name": "gulp-expressjs-nodemon-browser-sync",
+  "description": "",
+  "main": "gulpfile.js",
+  "authors": [
+    "[object Object]"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/paulmun/discovryProject",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-route": "^1.5.8",
+    "angular": "^1.5.8"
+  }
+}
