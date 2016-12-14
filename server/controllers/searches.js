@@ -20,13 +20,13 @@
 					host: 'www.googleapis.com',
 					path: '/youtube/v3/search?part=snippet&maxResults=10&order=viewCount&q='+query+'&type=channel&key='+key[0].value
 				};
+				
 				var callback = function(response){
 					var str = '';
 
 					response.on('data', function(chunk){
 						str += chunk;
 					});
-
 					//send json response to front-end
 					response.on('end', function(){
 						console.log(str);
@@ -38,6 +38,7 @@
 				https.request(options, callback).end();
 
 			});
+
 		}
 
 	}
