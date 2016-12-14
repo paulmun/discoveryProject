@@ -1,3 +1,5 @@
+'use strict';
+
 (function(){
 
 	angular.module('main').controller('mainController', mainController);

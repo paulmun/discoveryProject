@@ -1,3 +1,5 @@
+'use strict';
+
 (function(){
 
 	var searchController = require('../controllers/searches.js');

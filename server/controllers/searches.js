@@ -1,3 +1,5 @@
+'use strict';
+
 (function(){
 	var https = require('https');
 	var mongoose = require('mongoose'),
