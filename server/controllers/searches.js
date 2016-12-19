@@ -41,6 +41,40 @@
 
 		}
 
+		this.finder = function(req, res){
+			Search.find().exec(function(err, key){
+				if(err)res.json(err);
+
+				console.log(req.body.chId);
+
+				console.log('foundKey');
+
+				var options = {
+					host: 'www.googleapis.com',
+					path: '/youtube/v3/channels?part=statistics&maxResults=1&id='+req.body.chId+'&key='+key[0].value
+				};
+				
+				var callback = function(response){
+					var str = '';
+
+					response.on('data', function(chunk){
+						str += chunk;
+					});
+					//send json response to front-end
+					response.on('end', function(){
+						console.log(str);
+						str = JSON.parse(str);
+						res.json(str);
+					});
+				}
+
+				console.log('sendingAPIRequest');
+
+				https.request(options, callback).end();
+
+			});
+		}
+
 	}
 
 	module.exports = new searchController();

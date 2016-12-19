@@ -5,15 +5,20 @@
 
 <div id="results" ng-hide="firstSearch">
 	<p id="resultText"><b>Showing Results For: </b>"{{resultText}}"</p>
+	<button ng-click="saveResults()">Save Results</button>
 	<div id="results">
 		<div class="result" id="resultLabel">
 			<p>Go to Channel</p>
 			<p>Channel ID</p>
 		</div>
-		<div class="result" ng-repeat='item in results'>
+		<div class="result" ng-repeat='item in results track by $index'>
 			<img src="{{item.snippet.thumbnails.default.url}}" alt="">
 			<a href="http://youtube.com/channel/{{item.id.channelId}}">{{item.snippet.channelTitle}}</a>
 			<p>{{item.id.channelId}}</p>
+			<button ng-click="subscriberCount($index)">Statistics</button>
+			<p>Subscribers: {{subscribers[$index].statistics.subscriberCount}}</p>
+			<p>Video Count: {{subscribers[$index].statistics.videoCount}}</p>
+			<p>View Count: {{subscribers[$index].statistics.viewCount}}</p>
 		</div>
 	</div>
 </div>
