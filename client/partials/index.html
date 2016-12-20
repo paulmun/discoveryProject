@@ -3,7 +3,7 @@
 	<input type="submit" id="searchSubmit" ng-click="search()" value="Search">
 </form>
 <p id="resultText" ng-hide="firstSearch"><b>Showing Results For: </b>"{{resultText}}"</p>
-<!-- <button id="saveResults" ng-click="saveResults()">Save Results</button> -->
+<button id="saveResults" ng-click="saveResults()">Save Results</button>
 
 <div id="results" ng-hide="firstSearch">
 	<div class="result" ng-repeat='item in results track by $index'>
@@ -15,9 +15,9 @@
 		<button class="statsButton" ng-click="subscriberCount($index)">Statistics</button>
 		<div class="stats" ng-hide="showStats[$index] === undefined">
 			<p><strong>Channel Id:</strong> {{item.id.channelId}}</p>
-			<p><strong>Subscribers:</strong> {{stats[$index].statistics.subscriberCount}}</p>
-			<p><strong>Video Count:</strong> {{stats[$index].statistics.videoCount}}</p>
-			<p><strong>View Count:</strong> {{stats[$index].statistics.viewCount}}</p>
+			<p><strong>Subscribers:</strong> {{results[$index].statistics.subscriberCount}}</p>
+			<p><strong>Video Count:</strong> {{results[$index].statistics.videoCount}}</p>
+			<p><strong>View Count:</strong> {{results[$index].statistics.viewCount}}</p>
 		</div>
 	</div>
 	<button id="allStats" ng-click="retrieveAll()">Retrieve All Stats</button>

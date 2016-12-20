@@ -11,8 +11,11 @@
 		});
 
 		app.post('/searchId', function(req, res){
-			console.log('routes');
 			searchController.finder(req, res);
+		});
+
+		app.post('/searchResult', function(req, res){
+			searchController.saveSearch(req, res);
 		});
 		
 	}

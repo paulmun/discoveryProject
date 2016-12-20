@@ -19,10 +19,21 @@
 				});
 			}
 
-			// this.saveResults = function(query, )
+			this.saveResults = function(request, callback){
+				console.log('factory.saveResults')
+				console.log(request);
+				$http.post('/searchResult', request).then( function(returnData){
+					if(returnData.data.errors){
+						console.log(returnData.data.errors);
+						callback(returnData.data);
+					} else{
+						console.log(returnData.data);
+						callback(returnData.data);
+					}
+				});
+			}
 
 			this.subscriberCount = function(chId, callback){
-				console.log('factory');
 				$http.post('/searchId', chId).then( function(returnData){
 					if(returnData.data.errors){
 						console.log(returnData.data.errors);

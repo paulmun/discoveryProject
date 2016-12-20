@@ -26,22 +26,21 @@
 					if($scope.firstSearch){
 						$scope.firstSearch = !$scope.firstSearch;
 					}
+
 				}
 
 			});
 		}
 
 		$scope.saveResults = function(){
-			var query = $scope.resultText;
-			var results = $scope.results;
 
-			searchFactory.saveResults(query, function(data){
+			searchFactory.saveResults({data: $scope.results, query: $scope.resultText}, function(data){
 				if(data.errors){
 					$scope.errors = data.errors;
 				} else{
 					$scope.resultText = '';
-
-
+					$scope.results = '';
+					$scope.firstSearch = true;
 				}
 			});
 		}
@@ -54,8 +53,7 @@
 					if(data.errors){
 						$scope.errors = data.errors;
 					} else{
-						console.log(data[0]);
-						$scope.stats[idx] = data[0];
+						$scope.results[idx].statistics = data[0].statistics;
 						$scope.showStats[idx] = true;
 						console.log($scope.showStats);
 					}

@@ -3,7 +3,8 @@
 (function(){
 	var https = require('https');
 	var mongoose = require('mongoose'),
-		Search = mongoose.model('Search');
+		Search = mongoose.model('Search'),
+		SearchResult = mongoose.model('SearchResult');
 
 	function searchController(){
 		
@@ -45,10 +46,6 @@
 			Search.find().exec(function(err, key){
 				if(err)res.json(err);
 
-				console.log(req.body.chId);
-
-				console.log('foundKey');
-
 				var options = {
 					host: 'www.googleapis.com',
 					path: '/youtube/v3/channels?part=statistics&maxResults=1&id='+req.body.chId+'&key='+key[0].value
@@ -73,6 +70,29 @@
 				https.request(options, callback).end();
 
 			});
+		}
+
+		this.saveSearch = function(req, res){
+			console.log(req.body);
+			for(var i = 0; i < req.body.data.length; i++){
+				var searchResult = new SearchResult({
+					title: req.body.data[i].snippet.channelTitle,
+					description: req.body.data[i].snippet.description,
+					id: req.body.data[i].id.channelId,
+					subscribers: req.body.data[i].statistics.subscriberCount,
+					videoCount: req.body.data[i].statistics.videoCount,
+					viewCount: req.body.data[i].statistics.viewCount,
+					query: req.body.query
+				});
+
+				searchResult.save(function(err, result){
+					if(err)res.json(err);
+					else{
+						console.log(result);
+					}
+				});
+			}
+			res.json({data: 'succes'})
 		}
 
 	}
